@@ -1,0 +1,24 @@
+{
+  "UserLoginDetails": [
+    {
+      "password": "12345678",
+      "email": "vikasmore@gmail.com",
+      "phone": "8668458742",
+      "userLoginId": 1658656526044,
+      "id": 1,
+      "name": "Vikas More",
+      "gender": "male",
+      "dateOfBirth": "2003-06-18"
+    },
+    {
+      "phone": "8684545454",
+      "userLoginId": 1659274658415,
+      "id": 3
+    },
+    {
+      "phone": "8668458755",
+      "userLoginId": 1659274693851,
+      "id": 4
+    }
+  ]
+}
