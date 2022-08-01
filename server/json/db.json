@@ -2,23 +2,39 @@
   "UserLoginDetails": [
     {
       "password": "12345678",
-      "email": "vikasmore@gmail.com",
+      "email": "surveakash01@gmail.com",
       "phone": "8668458742",
       "userLoginId": 1658656526044,
       "id": 1,
-      "name": "Vikas More",
-      "gender": "male",
-      "dateOfBirth": "2003-06-18"
+      "name": "akash",
+      "gender": "Male",
+      "dateOfBirth": "2022-08-03"
     },
     {
       "phone": "8684545454",
       "userLoginId": 1659274658415,
-      "id": 3
+      "id": 3,
+      "password": "123456789"
     },
     {
+      "name": "Akash Surve",
       "phone": "8668458755",
       "userLoginId": 1659274693851,
-      "id": 4
+      "id": 4,
+      "password": "78787878",
+      "email": "surveakash01@gmail.com",
+      "gender": "Male",
+      "dateOfBirth": "2022-08-08"
+    },
+    {
+      "phone": "8668458555",
+      "userLoginId": 1659289249714,
+      "id": 5
+    },
+    {
+      "phone": "8684555555",
+      "userLoginId": 1659289908610,
+      "id": 6
     }
   ]
 }

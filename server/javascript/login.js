@@ -106,12 +106,16 @@ async function loginUserIfOTP() {
     if (OTP == OTPLocal) {
       for (var i = 0; i < data.length; i++) {
         if (mobileNumber == data[i].phone) {
-          localStorage.setItem("KeyOfLogin", data[i].userLoginId);
+          let arrUser = [];
+          arrUser.push(data[i].userLoginId);
+          arrUser.push(data[i].id);
+          arrUser.push(data[i].name);
+          localStorage.setItem("KeyOfLogin", JSON.stringify(arrUser));
         }
       }
       alert("Login Successfully");
 
-      window.open("../../index.html", "_self");
+      window.open("../profilepage/profilepage.html", "_self");
     } else {
       alert("Wrong OTP");
     }
@@ -144,7 +148,11 @@ function checkemailData(data) {
   if (flag.length != 0) {
     for (var i = 0; i < data.length; i++) {
       if (emailUser == data[i].email) {
-        localStorage.setItem("KeyOfLogin", data[i].userLoginId);
+        let arrUser = [];
+        arrUser.push(`${data[i].userLoginId}`);
+        arrUser.push(data[i].id);
+        arrUser.push(data[i].name);
+        localStorage.setItem("KeyOfLogin", JSON.stringify(arrUser));
       }
     }
     alert("Login Successfully");
