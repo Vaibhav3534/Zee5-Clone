@@ -6,9 +6,11 @@
       "phone": "8668458742",
       "userLoginId": 1658656526044,
       "id": 1,
-      "name": "akash",
+      "name": "Akash Surve",
       "gender": "Male",
-      "dateOfBirth": "2022-08-03"
+      "dateOfBirth": "5555-05-05",
+      "plan499": false,
+      "plan299": false
     },
     {
       "phone": "8684545454",

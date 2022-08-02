@@ -115,7 +115,7 @@ async function loginUserIfOTP() {
       }
       alert("Login Successfully");
 
-      window.open("../profilepage/profilepage.html", "_self");
+      window.open("../../index.html", "_self");
     } else {
       alert("Wrong OTP");
     }

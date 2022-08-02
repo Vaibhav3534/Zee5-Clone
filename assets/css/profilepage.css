@@ -76,6 +76,7 @@ body {
   margin-top: 30px;
 }
 #userProfileSectionUnder > div > h1 {
+  width: 85%;
   color: white;
   font-size: 30px;
   padding-bottom: 30px;
@@ -260,6 +261,7 @@ label {
 }
 /* change password */
 /* Edit User Profile Part  */
+#changePassword > div > h1:first-child,
 #userProfileUpdate > div > h1,
 #userWatchList > div > h1,
 #userSubscription > div > h1,
@@ -267,6 +269,7 @@ label {
 #userTransactions > div > h1 {
   color: white;
   font-size: 30px;
+  width: 85%;
   padding-bottom: 30px;
   border-bottom: 1px solid rgb(77, 72, 72);
 }

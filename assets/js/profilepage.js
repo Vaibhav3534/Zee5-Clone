@@ -121,7 +121,7 @@ let newPasswordcheck = document.getElementById("newPassConfirmIn");
 function checkStrength() {
   eye1.style.display = "none";
   newPassword.style.width = "320px";
-  if (newPassword.value > 0) {
+  if (newPassword.value.length > 0) {
     eye1.style.display = "block";
     newPassword.style.width = "500px";
   }
@@ -132,13 +132,13 @@ document
   .addEventListener("keyup", confirmNewPasswordfunc);
 function confirmNewPasswordfunc() {
   eye2.style.display = "none";
-  newPassConfirmIn.style.width = "320px";
+  newPassConfirmIn.style.width = "300px";
   changepassBTN.disabled = true;
   changepassBTN.style.cursor = "not-allowed";
   changepassBTN.style.color = "hsla(0, 0%, 100%, 0.5)";
   changepassBTN.style.backgroundColor = "transparent";
   changepassBTN.style.border = "1px solid hsla(0, 0%, 100%, 0.5)";
-  if (newPassConfirmIn.value > 0) {
+  if (newPassConfirmIn.value.length > 0) {
     eye2.style.display = "block";
     newPassConfirmIn.style.width = "500px";
     if (

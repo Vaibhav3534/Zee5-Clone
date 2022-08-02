@@ -1,31 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="icon"
-      sizes="32x32"
-      href="https://www.zee5.com/images/ZEE5_logo.svg?ver=2.51.82"
-      class="jsx-397bb7cff0cecce7"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link rel="stylesheet" href="./assets/css/navbar.css" />
-
-    <title>
-      ZEE5 - Watch TV Shows, 100+ Originals, Movies, News & Live TV Online
-    </title>
-  </head>
-  <body>
-    <section id="NavBarSection">
-      <navbar id="NavbarDivMain">
+function navbar() {
+  return `
+ <navbar id="NavbarDivMain">
         <div id="box">
           <div id="box1">
             <ul>
@@ -179,6 +154,7 @@
             <div class="submenu1">
               <a href="./movies.html">Movies</a>
             </div>
+
             <div class="submenu1">
               <a href="./music.html">Music</a>
             </div>
@@ -188,8 +164,7 @@
           </div>
         </div>
       </navbar>
-    </section>
-  </body>
-</html>
-<script src="./assets/js/navbarfunction.js"></script>
-<script src="./assets/js/searchFunction.js"></script>
+    `;
+}
+
+export { navbar };
