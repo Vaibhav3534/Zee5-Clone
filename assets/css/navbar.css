@@ -12,7 +12,7 @@ section {
   width: 100%;
   position: fixed;
   top: 0;
-
+  z-index: 10;
   left: 0;
 }
 #box {
@@ -232,7 +232,7 @@ select option {
 #menu11 {
   margin-right: 10px;
 }
-@media all and (min-width: 381px) and (max-width: 900px) {
+@media all and (min-width: 381px) and (max-width: 950px) {
   #box1 ul li:nth-child(2) {
     display: none;
   }
@@ -253,6 +253,11 @@ select option {
   }
   #submenu1 {
     width: 300px;
+  }
+  #search_input_div {
+    top: 50px;
+    width: 50px;
+    right: 30px;
   }
 }
 @media all and (min-width: 50px) and (max-width: 380px) {
@@ -281,7 +286,11 @@ select option {
     display: flex;
     justify-content: space-evenly;
   }
-
+  #search_input_div {
+    top: 50px;
+    width: 50px;
+    right: 30px;
+  }
   #menu1 {
     width: 250px;
   }
@@ -289,14 +298,19 @@ select option {
     width: 200px;
   }
 }
+
 #search_input_div {
   display: flex;
-  position: relative;
+
   width: 350px;
   height: 35px;
   align-items: center;
   border: 1px solid rgb(122, 114, 114);
   border-radius: 5px;
+  position: absolute;
+  right: 328px;
+  top: 20px;
+  transition: all 0.3s;
 }
 #search_input_div img {
   width: 15px;
@@ -316,7 +330,7 @@ select option {
   color: white;
   width: 297px;
   height: 25px;
-
+  transition: all 0.3s;
   position: absolute;
   top: 4px;
   right: 4px;

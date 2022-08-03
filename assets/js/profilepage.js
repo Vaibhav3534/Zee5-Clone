@@ -98,6 +98,27 @@ function ShowDataOnProfile(data) {
           });
         }
       }
+      if (data[i].plan699 || data[i].plan499) {
+        localStorage.setItem("primeOrNotUser", true);
+      } else {
+        localStorage.setItem("primeOrNotUser", false);
+      }
+      let planNotactive = document.getElementById("imgOfERRORmySubsription");
+      let plan499isactive = document.getElementById("RentalsPurchased499");
+      let plan699isactive = document.getElementById("RentalsPurchased699");
+      if (data[i].plan699) {
+        planNotactive.style.display = "none";
+        plan499isactive.style.display = "none";
+        plan699isactive.style.display = "block";
+      } else if (data[i].plan499) {
+        planNotactive.style.display = "none";
+        plan499isactive.style.display = "block";
+        plan699isactive.style.display = "none";
+      } else {
+        planNotactive.style.display = "flex";
+        plan499isactive.style.display = "none";
+        plan699isactive.style.display = "none";
+      }
       document.getElementById("UserProfileInitials").innerText = initialCharVar;
       document.getElementById("userNameDisplay").innerText =
         data[i].name || "Guest";

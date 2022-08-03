@@ -38,12 +38,10 @@ function displayDataInDiv(movie) {
           </div>`;
     let div = document.createElement("div");
     localStorage.setItem("NameOfMovieForPlayVideo", JSON.stringify(ele.title));
-    // div.setAttribute("onclick", `showMovieData('${ele.title}')`);
+    div.setAttribute("onclick", `PlayYoutubeVideo('${ele.title}')`);
     div.innerHTML = dataMovie;
     document.getElementById("movie-container").append(div);
-    setTimeout(() => {
-      document.getElementById("movie-container").style.display = "none";
-    }, 5000);
+    debounce(changeDisplay, 6000);
   });
 
   let btn = document.createElement("button");
@@ -51,6 +49,15 @@ function displayDataInDiv(movie) {
   btn.setAttribute("id", "moreBTN");
   btn.innerText = "MORE RESULTS";
   document.getElementById("movie-container").append(btn);
+}
+function PlayYoutubeVideo(ele) {
+  console.log(ele);
+  localStorage.setItem("PlayYoutube", ele);
+  window.open("playvideo.html", "_self");
+}
+
+function changeDisplay() {
+  document.getElementById("movie-container").style.display = "none";
 }
 function showMovieData() {
   localStorage.setItem(

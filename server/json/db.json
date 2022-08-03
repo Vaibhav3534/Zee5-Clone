@@ -9,8 +9,8 @@
       "name": "Akash Surve",
       "gender": "Male",
       "dateOfBirth": "5555-05-05",
-      "plan499": false,
-      "plan299": false
+      "plan699": false,
+      "plan499": false
     },
     {
       "phone": "8684545454",
@@ -37,6 +37,16 @@
       "phone": "8684555555",
       "userLoginId": 1659289908610,
       "id": 6
+    },
+    {
+      "phone": "8585858585",
+      "userLoginId": 1659451749061,
+      "id": 7,
+      "email": "",
+      "name": "Akash Surve",
+      "gender": "Male",
+      "dateOfBirth": "",
+      "password": "12345678"
     }
   ]
 }

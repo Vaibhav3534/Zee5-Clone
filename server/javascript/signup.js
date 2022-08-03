@@ -74,6 +74,8 @@ function loginUserIfOTP() {
       body: JSON.stringify({
         phone: mobileNumber,
         userLoginId: Date.now(),
+        plan499: false,
+        plan299: false,
       }),
       headers: { "Content-Type": "application/json" },
     });

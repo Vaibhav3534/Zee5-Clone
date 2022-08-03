@@ -1,6 +1,6 @@
-function navbar() {
-  return `
- <navbar id="NavbarDivMain">
+document.getElementById(
+  "NavBarSection"
+).innerHTML = `<navbar id="NavbarDivMain">
         <div id="box">
           <div id="box1">
             <ul>
@@ -22,10 +22,10 @@ function navbar() {
                 <a href="./movies.html">Movies</a>
               </li>
               <li>
-                <a href="webseries_single.html">Web Series</a>
+                <a href="webseries.html">Web Series</a>
               </li>
               <li>
-                <a href="./music.html">News</a>
+                <a href="./news.html">News</a>
               </li>
               <li id="menu">
                 <a href="#"
@@ -36,45 +36,45 @@ function navbar() {
                 <ul>
                   <li>
                     <a
-                      href="./Buyplan1.html"
+                     
                       title="Zee5 Premium Package Subscription"
                       >Premium</a
                     >
                   </li>
                   <li>
-                    <a href="./music.html" title="Watch Music Videos Online"
+                    <a  title="Watch Music Videos Online"
                       >Music</a
                     >
                   </li>
                   <li>
-                    <a href="./more2.html" title="Rent & Watch Movies on ZEEFEX"
+                    <a  title="Rent & Watch Movies on ZEEFEX"
                       >ZEEFLEX</a
                     >
                   </li>
                   <li>
-                    <a href="./playvideo.html" title="Play Games Online"
+                    <a  title="Play Games Online"
                       >Play</a
                     >
                   </li>
-                  <li><a href="./about.html" title="Articles">Articles</a></li>
+                  <li><a title="Articles">Articles</a></li>
                   <li>
                     <a
-                      href="./more.html"
+                     
                       title="Watch Kids Shows, Cartoons,Movies & Videos Online"
                       >Kids</a
                     >
                   </li>
                   <li>
-                    <a href="./search.html" title="Watch Official Fims Videos"
+                    <a  title="Watch Official Fims Videos"
                       >Videos</a
                     >
                   </li>
                   <li>
-                    <a href="./webseries_single.html" title="Stories"
+                    <a title="Stories"
                       >Stories</a
                     >
                   </li>
-                  <li><a href="./music.html">Channels</a></li>
+                  <li><a >Channels</a></li>
                 </ul>
               </li>
             </ul>
@@ -117,7 +117,7 @@ function navbar() {
                 </div>
               </li>
               <li>
-                <a href="Buyplan1.html">
+                <a href="./buyplan.html">
                   <button id="buy">
                     <i class="fa-solid fa-crown"></i> BUY PLAN
                   </button>
@@ -163,8 +163,4 @@ function navbar() {
             </div>
           </div>
         </div>
-      </navbar>
-    `;
-}
-
-export { navbar };
+      </navbar>`;
