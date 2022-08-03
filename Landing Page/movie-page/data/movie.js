@@ -1,10 +1,3 @@
-import navbar from "../components/navbar.js";
-
-
-let nav = document.getElementById('navbar');
-
-nav.innerHTML = navbar();
-
 var zeeOriginalData = [
     {
         img_url: "https://akamaividz2.zee5.com/image/upload/w_321,h_482,c_scale,f_webp,q_auto:eco,dpr_2.0/resources/0-0-1z51248/portrait/1920x770cac95b31db724e7eae3dd3401aad05a2.jpg",
@@ -115,38 +108,4 @@ var zeeOriginalData = [
 
 
 ]
-
-
-function slidefn(data) {
-    data.forEach(function (ele) {
-        let card = document.querySelector(".cardbox_container");
-        card.innerHTML = card.innerHTML +`<div class="cardbox">
-            <img src="${ele.img_url}" alt="Mithya" />
-            <div class="crownicon">
-              <a href="#"><i class="fa-solid fa-crown"></i></a>
-            </div>
-            <div class="text_content">
-              <h2>${ele.moviename}</h2>
-              <div class="bottom_text">
-                <div class="watch-btn1">
-                  <i class="fa-solid fa-play " ></i> Watch</
-                </div>
-                <p><i class="fa-solid fa-share-nodes"></i> More</p>
-              </div>
-            </div>
-          </div>`
-    })
-}
-
-slidefn(zeeOriginalData);
-
-document.querySelectorAll(".watch-btn1").forEach(function (btn) { 
-    btn.addEventListener("click", function () { 
-
-        let keyvalue = btn.parentNode.parentNode.childNodes[1].innerHTML;
-        localStorage.setItem("PlayYoutube", keyvalue);
-        location.href = "./playvideo.html";
-    });
-})
-// PlayYoutube
-// ./playvideo.html
+export { zeeOriginalData };
