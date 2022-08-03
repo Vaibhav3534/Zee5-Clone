@@ -1,9 +1,9 @@
-import navbar from "../components/navbar.js";
+// import navbar from "../components/navbar.js";
+// import { slidefn } from "../components/slidefn.js";
 
+// let nav = document.getElementById('navbar');
 
-let nav = document.getElementById('navbar');
-
-nav.innerHTML = navbar();
+// nav.innerHTML = navbar();
 
 var zeeOriginalData = [
     {
@@ -118,6 +118,7 @@ var zeeOriginalData = [
 
 
 function slidefn(data) {
+
     data.forEach(function (ele) {
         let card = document.querySelector(".cardbox_container");
         card.innerHTML = card.innerHTML +`<div class="cardbox">
@@ -129,7 +130,9 @@ function slidefn(data) {
               <h2>${ele.moviename}</h2>
               <div class="bottom_text">
                 <div class="watch-btn1">
+                <a href="">
                   <i class="fa-solid fa-play " ></i> Watch</
+                </a>
                 </div>
                 <p><i class="fa-solid fa-share-nodes"></i> More</p>
               </div>
@@ -137,8 +140,11 @@ function slidefn(data) {
           </div>`
     })
 }
+// let card = document.querySelector(".cardbox_container");
 
 slidefn(zeeOriginalData);
+
+
 
 document.querySelectorAll(".watch-btn1").forEach(function (btn) { 
     btn.addEventListener("click", function () { 
