@@ -144,15 +144,50 @@ function slidefn(data) {
 
 slidefn(zeeOriginalData);
 
+async function getdata() { 
+    let url = "http://www.omdbapi.com/?apikey=d6f2de94&s=marvel";
+    let res = await fetch(url);
+    let data = await res.json();
+    console.log(data);
+    slidefn1(data.Search);
+}
+getdata();
 
+
+function slidefn1(data) {
+    
+    data.forEach(function (ele) {
+        let card = document.querySelector(".cardbox_container1");
+        card.innerHTML = card.innerHTML + `<div class="cardbox">
+            <img src="${ele.Poster}" alt="Mithya" />
+            <div class="crownicon">
+              <a href=""><i class="fa-solid fa-crown"></i></a>
+            </div>
+            <div class="text_content">
+              <h2>${ele.Title}</h2>
+              <div class="bottom_text">
+                <div class="watch-btn1">
+                
+                  <i class="fa-solid fa-play " ></i> Watch</
+                
+                </div>
+                <p><i class="fa-solid fa-share-nodes"></i> More</p>
+              </div>
+            </div>
+          </div>`
+    })
+}
+// slidefn1(zeeOriginalData);
 
 document.querySelectorAll(".watch-btn1").forEach(function (btn) { 
     btn.addEventListener("click", function () { 
 
         let keyvalue = btn.parentNode.parentNode.childNodes[1].innerHTML;
+        console.log("keyvalue");
         localStorage.setItem("PlayYoutube", keyvalue);
-        location.href = "./playvideo.html";
+        // location.href = "./playvideo.html";
     });
 })
+
 // PlayYoutube
 // ./playvideo.html

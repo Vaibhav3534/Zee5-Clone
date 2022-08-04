@@ -5,6 +5,9 @@ body {
           Helvetica;
         background-color: #0f0617;
       }
+      .main-slide{
+        margin-top: 50px;
+      }
       .glide img {
         display: block;
         margin: auto;

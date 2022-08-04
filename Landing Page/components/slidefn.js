@@ -8,7 +8,7 @@ function slidefn(data,parentNode) {
             <div class="text_content">
               <h2>${ele.moviename}</h2>
               <div class="bottom_text">
-                <div class="watch-btn1">
+                <div class="watch-btn1 watch-btn2">
                 
                   <i class="fa-solid fa-play " ></i> Watch
                 </div>
@@ -18,4 +18,12 @@ function slidefn(data,parentNode) {
           </div>`
     })
 }
+// function slidefn(data, parentNode) {
+//   data.forEach(function (ele) { 
+
+//   })
+// }
+
+
+
 export { slidefn };
