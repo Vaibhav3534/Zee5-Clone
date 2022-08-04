@@ -2,51 +2,22 @@
   "UserLoginDetails": [
     {
       "password": "12345678",
-      "email": "surveakash01@gmail.com",
+      "email": "",
       "phone": "8668458742",
       "userLoginId": 1658656526044,
       "id": 1,
-      "name": "Akash Surve",
-      "gender": "Male",
-      "dateOfBirth": "5555-05-05",
-      "plan699": false,
-      "plan499": false
-    },
-    {
-      "phone": "8684545454",
-      "userLoginId": 1659274658415,
-      "id": 3,
-      "password": "123456789"
-    },
-    {
-      "name": "Akash Surve",
-      "phone": "8668458755",
-      "userLoginId": 1659274693851,
-      "id": 4,
-      "password": "78787878",
-      "email": "surveakash01@gmail.com",
-      "gender": "Male",
-      "dateOfBirth": "2022-08-08"
-    },
-    {
-      "phone": "8668458555",
-      "userLoginId": 1659289249714,
-      "id": 5
-    },
-    {
-      "phone": "8684555555",
-      "userLoginId": 1659289908610,
-      "id": 6
-    },
-    {
-      "phone": "8585858585",
-      "userLoginId": 1659451749061,
-      "id": 7,
-      "email": "",
-      "name": "Akash Surve",
+      "name": "",
       "gender": "Male",
       "dateOfBirth": "",
-      "password": "12345678"
+      "plan699": true,
+      "plan499": true,
+      "watchList": [
+        {
+          "VID": "9cANXUs8Jog",
+          "title": "Doraemon New Episode in Hindi Full Hd 2022",
+          "photo": "https://i.ytimg.com/vi/9cANXUs8Jog/mqdefault.jpg "
+        }
+      ]
     }
   ]
 }

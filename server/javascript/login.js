@@ -5,6 +5,7 @@ document
 let loginBTNElement = document.getElementById("LoginBTNUser");
 
 function checkNoOrEmail() {
+  loginBTNElement.innerText = "Login";
   loginBTNElement.disabled = true;
   loginBTNElement.style.backgroundColor = "transparent";
   loginBTNElement.style.cursor = "not-allowed";
@@ -26,6 +27,7 @@ function checkNoOrEmail() {
 
     if (valueofInput.length == 10) {
       loginBTNElement.style.backgroundColor = "rgb(130 48 198)";
+      loginBTNElement.innerText = "Send OTP";
       loginBTNElement.style.cursor = "pointer";
       loginBTNElement.style.color = "white";
       loginBTNElement.disabled = false;
@@ -84,6 +86,7 @@ function checkPhonenumber(data) {
     let otpalert = Math.floor(Math.random() * 1000 + 1000);
     localStorage.setItem("OTPNew", otpalert);
     alert(`OTP = ${otpalert}`);
+    loginBTNElement.innerText = "Verify OTP";
     document.getElementById("otpDivInput").style.display = "flex";
     document.getElementById("forgotPasID").style.display = "none";
     loginBTNElement.removeEventListener("click", checkDataWithServerNumber);
@@ -110,7 +113,17 @@ async function loginUserIfOTP() {
           arrUser.push(data[i].userLoginId);
           arrUser.push(data[i].id);
           arrUser.push(data[i].name);
+          arrUser.push(data[i].plan699);
+          arrUser.push(data[i].plan499);
           localStorage.setItem("KeyOfLogin", JSON.stringify(arrUser));
+          if (data[i].plan699) {
+            localStorage.setItem("primeOrNotUser699", true);
+          } else if (data[i].plan499) {
+            localStorage.setItem("primeOrNotUser499", true);
+          } else {
+            localStorage.setItem("primeOrNotUser699", false);
+            localStorage.setItem("primeOrNotUser499", false);
+          }
         }
       }
       alert("Login Successfully");
@@ -149,10 +162,20 @@ function checkemailData(data) {
     for (var i = 0; i < data.length; i++) {
       if (emailUser == data[i].email) {
         let arrUser = [];
-        arrUser.push(`${data[i].userLoginId}`);
+        arrUser.push(data[i].userLoginId);
         arrUser.push(data[i].id);
         arrUser.push(data[i].name);
+        arrUser.push(data[i].plan699);
+        arrUser.push(data[i].plan499);
         localStorage.setItem("KeyOfLogin", JSON.stringify(arrUser));
+        if (data[i].plan699) {
+          localStorage.setItem("primeOrNotUser699", true);
+        } else if (data[i].plan499) {
+          localStorage.setItem("primeOrNotUser499", true);
+        } else {
+          localStorage.setItem("primeOrNotUser699", false);
+          localStorage.setItem("primeOrNotUser499", false);
+        }
       }
     }
     alert("Login Successfully");

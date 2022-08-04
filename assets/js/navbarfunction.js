@@ -26,3 +26,15 @@ function redirecttoProfilePage() {
   document.getElementById("profilePopDiv").style.display = "none";
   window.open("./profilepage.html", "_self");
 }
+let flag1 = localStorage.getItem("primeOrNotUser699");
+let flag2 = localStorage.getItem("primeOrNotUser499");
+let buyBtnCondition = document.getElementById("buy");
+if (flag1 == "true") {
+  buyBtnCondition.innerHTML = `<i class="fa-solid fa-crown"></i> PREMIUM`;
+  buyBtnCondition.style.backgroundColor = "goldenrod";
+  buyBtnCondition.disabled = true;
+} else if (flag2 == "true") {
+  buyBtnCondition.innerHTML = `<i class="fa-solid fa-crown"></i> UPGRADE PLAN`;
+} else {
+  buyBtnCondition.innerHTML = `<i class="fa-solid fa-crown"></i> BUY PLAN`;
+}

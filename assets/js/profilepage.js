@@ -7,6 +7,7 @@ function noneAndBlock(val, valS) {
   document.getElementById("userWatchList").style.display = "none";
   document.getElementById("userSubscription").style.display = "none";
   document.getElementById("userRentals").style.display = "none";
+  checkWatchListData();
   document.getElementById("userTransactions").style.display = "none";
   document.getElementById(val).style.display = "block";
   let arrOfButtonID = [
@@ -98,10 +99,13 @@ function ShowDataOnProfile(data) {
           });
         }
       }
-      if (data[i].plan699 || data[i].plan499) {
-        localStorage.setItem("primeOrNotUser", true);
+      if (data[i].plan699) {
+        localStorage.setItem("primeOrNotUser699", true);
+      } else if (data[i].plan499) {
+        localStorage.setItem("primeOrNotUser499", true);
       } else {
-        localStorage.setItem("primeOrNotUser", false);
+        localStorage.setItem("primeOrNotUser699", false);
+        localStorage.setItem("primeOrNotUser499", false);
       }
       let planNotactive = document.getElementById("imgOfERRORmySubsription");
       let plan499isactive = document.getElementById("RentalsPurchased499");
@@ -227,3 +231,80 @@ function UpdateUserProfileInJson() {
   alert("Profile Updated Successfully");
 }
 // ===============================user profile update on json =============================
+
+async function checkWatchListData() {
+  var keyU = JSON.parse(localStorage.getItem("KeyOfLogin"));
+  try {
+    let res = await fetch(`http://localhost:3000/UserLoginDetails/${keyU[1]}`);
+    let data = await res.json();
+    displayWatchList(data.watchList);
+  } catch (error) {
+    console.log(error);
+  }
+}
+function displayWatchList(data) {
+  document.getElementById("appendWatchList").innerHTML = "";
+  if (data.length === 0) {
+    document.getElementById("imgOfERRORmyWatchlist").style.display = "flex";
+    document.getElementById("MyWatchListDisplay").style.display = "none";
+  } else {
+    document.getElementById("imgOfERRORmyWatchlist").style.display = "none";
+    document.getElementById("MyWatchListDisplay").style.display = "block";
+    data.forEach((element) => {
+      let watchListAppendData = `
+                    <div>
+                   <img src="${element.photo}" alt="" />
+                   </div>
+                    <div>
+                    <h3>${element.title.slice(0, 40)}...</h3>
+                    <button id="WatchListWatch" onclick="PlayYoutubeVideo('${
+                      element.title
+                    }')">Watch</button>
+                    <button id="watchListRemove" onclick="removeWatchList('${
+                      element.VID
+                    }')">Remove</button>
+                    </div>
+                    `;
+      let div = document.createElement("div");
+      div.innerHTML = watchListAppendData;
+
+      document.getElementById("appendWatchList").append(div);
+    });
+  }
+}
+function removeWatchList(ele) {
+  getDataFromServer();
+
+  async function getDataFromServer() {
+    try {
+      var arrOfWatchList;
+      let arr = JSON.parse(localStorage.getItem("KeyOfLogin"));
+      let id = arr[1];
+      let url = `http://localhost:3000/UserLoginDetails/${id}`;
+      let res = await fetch(url);
+      let data = await res.json();
+      arrOfWatchList = data.watchList;
+      arrOfWatchList.forEach((element, index) => {
+        if (element.VID == ele) {
+          arrOfWatchList.splice(index, 1);
+        }
+      });
+      alert("Removed From Watch List");
+      fetch(`http://localhost:3000/UserLoginDetails/${id}`, {
+        method: "PATCH",
+        body: JSON.stringify({
+          watchList: arrOfWatchList,
+        }),
+        headers: { "content-type": "application/json" },
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  }
+}
+
+function PlayYoutubeVideo(ele) {
+  console.log(ele);
+  localStorage.setItem("PlayYoutube", ele);
+  window.open("./playvideo.html", "_self");
+}

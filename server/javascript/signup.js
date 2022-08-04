@@ -76,6 +76,7 @@ function loginUserIfOTP() {
         userLoginId: Date.now(),
         plan499: false,
         plan299: false,
+        watchList: [],
       }),
       headers: { "Content-Type": "application/json" },
     });
