@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> otp popup</title>
+    <style>
+    *{
+        background-color: black;
+    }
+    #popup_box{
+          
+          background-color: white;
+          border-radius: 2.5px;
+          height: 350px;
+          width: 500px;
+          color: white;
+          margin: 100px 400px 100px 400px;
+          justify-content: center;
+          text-align: center;
+          border-radius: 4px;
+      }
+    
+      #popup_box h2{
+        font-weight: 700;
+        background-color: white;
+      }
+    
+     button{
+      background-color: #8230c6;
+      
+      padding: 15px;
+      width: 80%;
+      margin: auto;
+      justify-content: center;
+       margin-top: 80px;
+       border-radius:4px;
+       border: none;
+     }
+      #gap{
+        margin: 60px;
+      
+      }
+    </style>
+</head>
+
+<body>
+    
+      <div  id="popup_box">
+          
+            <h5>Verify OTP</h5>
+            <h3>Please enter 4-digit OTP we sent on 917355167733</h3>
+            <input type="password" valuw=""  id="otp_input">
+           
+            <button id="otp_btn">Verify</button>
+      </div>
+    
+</body>
+</html>
+<script> 
+ document.getElementById("otp_btn").addEventListener("click",locationchange)
+ function locationchange(){
+  window.location.href="parentlockotp.html"
+ }
+</script>

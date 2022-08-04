@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>parent lock popupl</title>
+    <style>
+      #popup_box{
+          
+    background: #0f0617;
+          border-radius: 2.5px;
+          height: 350px;
+          width: 500px;
+          color: white;
+          margin: 100px 400px 100px 400px;
+          justify-content: center;
+          text-align: center;
+      }
+    
+      #popup_box h2{
+        font-weight: 700;
+      }
+      h2{
+        margin-top: 150px;
+        margin-top: 50px;
+      }
+     button{
+      background-color: #8230c6;
+      color: white;
+      padding: 15px;
+      width: 80%;
+      margin: auto;
+      justify-content: center;
+       margin-top: 80px;
+     }
+      #gap{
+        margin: 60px;
+       color: #0f0617;
+      }
+    </style>
+</head>
+
+<body>
+    
+      <div  id="popup_box">
+            <div id="gap">ggg</div>
+            <h2>Verify Account</h2>
+            <h3>Please verify your number via otp</h3>
+          
+           
+            <button id="otp_btn">Send Otp</button>
+      </div>
+    
+</body>
+</html>
+<script> 
+ document.getElementById("otp_btn").addEventListener("click",locationchange)
+ function locationchange(){
+  window.location.href="parentlockotp.html"
+  // done this part
+ }
+</script>
