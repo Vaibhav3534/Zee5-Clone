@@ -121,7 +121,7 @@ function slidefn(data) {
 
     data.forEach(function (ele) {
         let card = document.querySelector(".cardbox_container");
-        card.innerHTML = card.innerHTML +`<div class="cardbox">
+        card.innerHTML = card.innerHTML + `<div class="cardbox">
             <img src="${ele.img_url}" alt="Mithya" />
             <div class="crownicon">
               <a href="#"><i class="fa-solid fa-crown"></i></a>
@@ -129,58 +129,70 @@ function slidefn(data) {
             <div class="text_content">
               <h2>${ele.moviename}</h2>
               <div class="bottom_text">
-                <div class="watch-btn1">
-                <a href="">
-                  <i class="fa-solid fa-play " ></i> Watch</
-                </a>
+                <div class="watch-btn">
+                    <a href="">
+                    <i class="fa-solid fa-play " ></i> Watch</
+                    </a>
                 </div>
                 <p><i class="fa-solid fa-share-nodes"></i> More</p>
               </div>
             </div>
           </div>`
+
+
     })
 }
 // let card = document.querySelector(".cardbox_container");
 
-slidefn(zeeOriginalData);
 
-async function getdata() { 
-    let url = "http://www.omdbapi.com/?apikey=d6f2de94&s=marvel";
-    let res = await fetch(url);
-    let data = await res.json();
-    console.log(data);
-    slidefn1(data.Search);
+
+async function getdata() {
+    try {
+        let url = "http://www.omdbapi.com/?apikey=d6f2de94&s=marvel";
+        let res = await fetch(url);
+        let data = await res.json();
+        console.log(data.Search);
+        let card = document.querySelector(".cardbox_container");
+        slidefn1(data.Search);
+
+    } catch (error) {
+        console.log(error);
+    }
 }
-getdata();
+
+
 
 
 function slidefn1(data) {
-    
+
     data.forEach(function (ele) {
         let card = document.querySelector(".cardbox_container1");
         card.innerHTML = card.innerHTML + `<div class="cardbox">
             <img src="${ele.Poster}" alt="Mithya" />
             <div class="crownicon">
-              <a href=""><i class="fa-solid fa-crown"></i></a>
+              <a href="#"><i class="fa-solid fa-crown"></i></a>
             </div>
             <div class="text_content">
               <h2>${ele.Title}</h2>
               <div class="bottom_text">
-                <div class="watch-btn1">
-                
-                  <i class="fa-solid fa-play " ></i> Watch</
-                
+                <div class="watch-btn watchbtn">
+                    <a href="">
+                    <i class="fa-solid fa-play " ></i> Watch</
+                     </a> 
                 </div>
                 <p><i class="fa-solid fa-share-nodes"></i> More</p>
               </div>
             </div>
           </div>`
+
+
     })
 }
-// slidefn1(zeeOriginalData);
+getdata();
 
-document.querySelectorAll(".watch-btn1").forEach(function (btn) { 
-    btn.addEventListener("click", function () { 
+slidefn(zeeOriginalData);
+document.querySelectorAll(".watch-btn").forEach(function (btn) {
+    btn.addEventListener("click", function () {
 
         let keyvalue = btn.parentNode.parentNode.childNodes[1].innerHTML;
         console.log("keyvalue");
@@ -188,6 +200,70 @@ document.querySelectorAll(".watch-btn1").forEach(function (btn) {
         // location.href = "./playvideo.html";
     });
 })
+document.querySelectorAll(".watchbtn").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+
+        let keyvalue = btn.parentNode.parentNode.childNodes[1].innerHTML;
+        console.log("keyvalue");
+        localStorage.setItem("PlayYoutube1", keyvalue);
+        // location.href = "./playvideo.html";
+    });
+})
+
+// slidefn1(zeeOriginalData);
+
+// function slidefn1(data, parentNode) {
+//     data.forEach(function (ele) {
+//         let cardbox = document.createElement('div');
+//         cardbox.className = "cardbox";
+//         let poster = document.createElement('img');
+//         poster.src = ele.Poster;
+
+//         let crownicon = document.createElement('div');
+//         crownicon.className = "crownicon";
+//         let acrown = document.createElement('a');
+//         let i = document.createElement('i');
+//         i.className = "fa-solid fa-crown";
+//         // i.className = "";
+
+//         crownicon.append(acrown);
+//         acrown.append(i);
+
+
+
+//         let text_context = document.createElement('div');
+//         text_context.className = "text_context";
+//         let h2 = document.createElement('h2');
+//         h2.innerHTML = ele.Title;
+//         let bottom_text = document.createElement('div');
+//         bottom_text.className = "bottom_text";
+//         let watch_btn1 = document.createElement('div');
+//         watch_btn1.className = "watch_btn1";
+//         let a = document.createElement('a');
+//         let i1 = document.createElement('i');
+//         i1.className = "fa-solid fa-play";
+//         a.append(i1);
+//         watch_btn1.append(a)
+//         let a3 = document.createElement('a');
+//         let p = document.createElement('p');
+//         let i2 = document.createElement('i');
+//         i2.className = "fa-solid fa-share-nodes";
+
+//         p.append(i2);
+//         a3.append(p);
+//         bottom_text.append(watch_btn1,p);
+//         text_context.append(h2, bottom_text);
+
+//         let a4 = document.createElement('a');
+
+
+//         cardbox.append(poster, crownicon, text_context,a4);
+//         parentNode.append(cardbox);
+//     }) 
+// }
+
+
+
 
 // PlayYoutube
 // ./playvideo.html
