@@ -1,0 +1,62 @@
+body {
+        width: auto;
+        font-family: NotoSansRegular, -apple-system, BlinkMacSystemFont,
+          Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
+          Helvetica;
+        background-color: #0f0617;
+      }
+      .main-slide{
+        margin-top: 50px;
+      }
+      .glide img {
+        display: block;
+        margin: auto;
+      }
+      .arrow {
+        border: solid white;
+        border-width: 0 5px 5px 0;
+        display: inline-block;
+        padding: 9px;
+      }
+      .left {
+        transform: rotate(135deg);
+        -webkit-transform: rotate(135deg);
+      }
+
+      .right {
+        transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+      }
+      .watch-div {
+        position: relative;
+        position: absolute;
+        bottom: 10%;
+        margin-left: 57px;
+      }
+
+      .watch-div h1 {
+        color: whitesmoke;
+        font-weight: bolder;
+      }
+
+      .watch-btn {
+        display: flex;
+        justify-content: space-between;
+        gap: 5px;
+        font-size: 12px;
+        font-weight: bolder;
+        border: 1px solid white;
+        background-color: transparent;
+        color: white;
+        border-radius: 4px;
+        padding: 10px 20px;
+      }
+      .two-btn {
+        display: flex;
+      }
+      .buy-btn {
+        margin-left: 10px;
+        padding: 10px 24px;
+        background-color: rgb(125, 36, 208);
+        border: none;
+      }
