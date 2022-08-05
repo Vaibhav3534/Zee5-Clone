@@ -1,0 +1,249 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
+
+.movie-list-wrapper a {
+  text-decoration: none;
+  margin-top: 0px;
+  padding: 2px;
+}
+
+/* body{
+    background-color:#0f0617;
+    font-family: Arial, Helvetica, sans-serif;
+} */
+
+.containerbox {
+  width: 100%;
+  margin: auto;
+
+  position: relative;
+}
+.heading_top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0px 10px;
+  margin-top: 30px;
+}
+.heading_top > h3 {
+  color: #ffffff;
+  font-weight: 400;
+  margin: 0px;
+}
+.heading_top > p {
+  font-size: 25px;  
+  margin-top: 10px;
+  /* background-color: black; */
+}
+.heading_top a {
+  font-weight: bold;
+  color: #6649b0;
+}
+/* ----------------------------------heading End --------------------- */
+
+.cardbox_container,.cardbox_container1 {
+  /* border: 1px solid white; */
+  /* height: 400px; */
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  /* align-items: center; */
+  gap: 60px;
+  transform: translateX(0);
+  transition: all 0.9s ease-in-out;
+  padding: 0px 10px;
+  margin: 0px 10%;
+  
+
+  /* overflow-y: scroll; */
+
+  /* margin: 0px; */
+}
+/* .cardbox_container::-webkit-scrollbar {
+  width: 0px;
+} */
+/* .cardbox_container1::-webkit-scrollbar {
+  width: 0px;
+} */
+
+.cardbox {
+  max-width: 300px;
+  min-width: 210px;
+  width: 100%;
+  /* height: 300px; */
+  border-radius: 5px;
+  margin-top: 1%;
+  position: relative;
+  transition: 00.4s;
+  gap:60px;
+  
+  box-sizing: border-box;
+}
+.cardbox:hover {
+  transform: scale(1.2);
+  border: 9px solid #ffffff;
+  /* border-radius: 5px; */
+  z-index: 1;
+  /* height: 350px; */
+}
+.crownicon {
+  position: absolute;
+  top: 3%;
+  left: 3%;
+  background-color: #ffffff;
+  padding: 1% 1.5%;
+  background-color: none;
+  border-radius: 50%;
+}
+.crownicon a {
+  background-color: #ffffff;
+  border-radius: 50%;
+}
+.crownicon i {
+  color: #ff0066;
+  background-color: #ffffff;
+}
+.cardbox > img {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+.text_content {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  background-color: #ffff;
+  /* padding-bottom: 10px; */
+  /* border-radius: 5px; */
+  padding-left: 2%;
+  display: none;
+  transition: 4.9s;
+
+  /* height: 180px; */
+}
+
+.text_content > h2 {
+  padding: 3px;
+  font-size: 14px;
+  margin:0px;
+  color: black;
+}
+.cardbox:hover .text_content {
+  display: inherit;
+  /* box-shadow: inset 0 100px 0 0 #ffffff; */
+}
+.text_content > p {
+  /* padding: 1% 1.5%; */
+  font-size: 14px;
+  font-weight: bold;
+}
+.bottom_text {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+  margin-top: 10px;
+    justify-content: space-between;
+}
+.bottom_text a {
+  border: 1px solid gray;
+  color: black;
+
+  padding: 8px;
+  border-radius: 8px;
+  font-size: 12px;
+  /* font-weight: 600; */
+  font-family: "Noto Sans", sans-serif;
+  margin-right: 10px;
+}
+.bottom_text + p {
+  margin: 0px;
+}
+.bottom_text a:hover {
+  color: #ffffff;
+  background-color: #6646b7;
+}
+
+.bottom_text p {
+  color: black;
+  margin: 0px;
+}
+
+.movie-list-wrapper {
+  position: relative;
+  overflow: hidden;
+  /* border: 3px solid honeydew; */
+  /* margin: 10px 0; */
+}
+
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next2 {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next2 {
+  right: 0%;
+  border-radius: 3px 0 0 3px;
+}
+.pre1:hover,
+.next2:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.dropdown{
+    /* margin-top: 100px; */
+}
+#filter{
+    margin-top: 6%;
+    border: 1px solid hsla(0,0%,100%,.3);
+    border-radius: 6px;
+    font-size: 20px;
+    font-weight: bold;
+    min-width: 220px;
+    padding: 12px 16px 11px;
+    box-sizing: border-box;
+    cursor: pointer;
+    height: auto;
+    margin-left: 10%;
+}
+select> option{
+    color: black !important;
+    background-color: transparent !important;
+    font-family: NotoSansRegular,sans-serif;
+    font-size: 1.4rem;
+    line-height: 1.5714285714em;
+    font-weight: 400;
+}

@@ -83,7 +83,7 @@ document.getElementById(
             <ul>
               <li style="margin-top: -5px">
                 <div id="search_input_div">
-                  <img src="./assets/img/serchLogo.png" alt="" />
+                  <img src="" alt="" />
                   <input
                     type="text"
                     onkeyup="debounce(searchMovieitm,500)"

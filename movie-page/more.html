@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/footer.css" />
+    <link rel="stylesheet" href="./css/navbar.css" />
+    <link rel="stylesheet" href="./css/more.css" />
+    <!-- CSS only -->
+    <!-- <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    /> -->
+  </head>
+  <body>
+    <section id="NavBarSection"></section>
+
+    <select name="Filter" id="filter" onchange="changefilter()" >
+        <option value="a">FILTER</option>
+        
+        <option value="A-Z">A-Z</option>
+        <option value="reverse">Z-A</option>
+        <!-- <option value="">A-Z</option> -->
+    </select>
+
+    <div class="movie-list-wrapper">
+      <div class="containerbox">
+        <div class="heading_top">
+          <h3></h3>
+          <a href="more.html"> <i class="fa-solid fa-angle-right"></i></a>
+        </div>
+        <div class="cardbox_container"></div>
+      </div>
+    </div>
+
+    <section id="footer_top"></section>
+    <script src="./more.js"></script>
+    <!-- <script src="./movie.js"></script> -->
+    <!-- <script type="module" src="./movie2.js"></script> -->
+    <script src="./components/footer.js"></script>
+    <script src="./components/navbar.js"></script>
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./filter.js"></script>
+  </body>
+</html>

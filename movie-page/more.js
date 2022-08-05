@@ -1,10 +1,3 @@
-// import navbar from "../components/navbar.js";
-// import { slidefn } from "../components/slidefn.js";
-
-// let nav = document.getElementById('navbar');
-
-// nav.innerHTML = navbar();
-
 var zeeOriginalData = [
     {
         img_url: "https://akamaividz2.zee5.com/image/upload/w_321,h_482,c_scale,f_webp,q_auto:eco,dpr_2.0/resources/0-0-1z51248/portrait/1920x770cac95b31db724e7eae3dd3401aad05a2.jpg",
@@ -116,8 +109,9 @@ var zeeOriginalData = [
 
 ]
 
-
-function slidefn(data) {
+function displaygrid(data) {
+    let card = document.querySelector(".cardbox_container");
+    card.innerHTML = "";
 
     data.forEach(function (ele) {
         let card = document.querySelector(".cardbox_container");
@@ -129,52 +123,6 @@ function slidefn(data) {
             <div class="text_content">
               <h2>${ele.moviename}</h2>
               <div class="bottom_text">
-                <div class="watch-btn">
-                    <a href="">
-                    <i class="fa-solid fa-play " ></i> Watch</
-                    </a>
-                </div>
-                <p><i class="fa-solid fa-share-nodes"></i> More</p>
-              </div>
-            </div>
-          </div>`
-
-
-    })
-}
-// let card = document.querySelector(".cardbox_container");
-
-
-
-async function getdata() {
-    try {
-        let url = "http://www.omdbapi.com/?apikey=d6f2de94&s=marvel";
-        let res = await fetch(url);
-        let data = await res.json();
-        console.log(data.Search);
-        let card = document.querySelector(".cardbox_container");
-        slidefn1(data.Search);
-
-    } catch (error) {
-        console.log(error);
-    }
-}
-
-
-
-
-function slidefn1(data) {
-
-    data.forEach(function (ele) {
-        let card = document.querySelector(".cardbox_container1");
-        card.innerHTML = card.innerHTML + `<div class="cardbox">
-            <img src="${ele.Poster}" alt="Mithya" />
-            <div class="crownicon">
-              <a href="#"><i class="fa-solid fa-crown"></i></a>
-            </div>
-            <div class="text_content">
-              <h2>${ele.Title}</h2>
-              <div class="bottom_text">
                 <div class="watch-btn watchbtn">
                     <a href="">
                     <i class="fa-solid fa-play " ></i> Watch</
@@ -185,13 +133,16 @@ function slidefn1(data) {
             </div>
           </div>`
 
-
+        
     })
 }
-getdata();
+window.addEventListener("load", function () {
+displaygrid(zeeOriginalData);
 
-slidefn(zeeOriginalData);
-document.querySelectorAll(".watch-btn").forEach(function (btn) {
+})
+
+
+  document.querySelectorAll(".watch-btn").forEach( function (btn) {
     btn.addEventListener("click", function () {
 
         let keyvalue = btn.parentNode.parentNode.childNodes[1].innerHTML;
@@ -199,71 +150,32 @@ document.querySelectorAll(".watch-btn").forEach(function (btn) {
         localStorage.setItem("PlayYoutube", keyvalue);
         // location.href = "./playvideo.html";
     });
-})
-document.querySelectorAll(".watchbtn").forEach(function (btn) {
-    btn.addEventListener("click", function () {
+  })
 
-        let keyvalue = btn.parentNode.parentNode.childNodes[1].childNodes[1].innerHTML;
-        console.log(keyvalue);
-        localStorage.setItem("PlayYoutube", keyvalue);
-        // location.href = "./playvideo.html";
-    });
-})
+function changefilter() {
+    let filter = document.getElementById("filter").value;
 
-// slidefn1(zeeOriginalData);
+    if (filter == "A-Z") {
+        let data = zeeOriginalData.sort(function (b, a) { 
+            if (a.moviename > b.moviename) return -1;
+            if (a.moviename < b.moviename) return 1;
+            return 0;
+            
+        })
+        console.log(data);
+        displaygrid(data);
+    }
+    else if (filter == "reverse") {
+        let data = zeeOriginalData.sort(function (a, b) {
+            if (a.moviename > b.moviename) return -1;
+            if (a.moviename < b.moviename) return 1;
+            return 0;
 
-// function slidefn1(data, parentNode) {
-//     data.forEach(function (ele) {
-//         let cardbox = document.createElement('div');
-//         cardbox.className = "cardbox";
-//         let poster = document.createElement('img');
-//         poster.src = ele.Poster;
-
-//         let crownicon = document.createElement('div');
-//         crownicon.className = "crownicon";
-//         let acrown = document.createElement('a');
-//         let i = document.createElement('i');
-//         i.className = "fa-solid fa-crown";
-//         // i.className = "";
-
-//         crownicon.append(acrown);
-//         acrown.append(i);
-
-
-
-//         let text_context = document.createElement('div');
-//         text_context.className = "text_context";
-//         let h2 = document.createElement('h2');
-//         h2.innerHTML = ele.Title;
-//         let bottom_text = document.createElement('div');
-//         bottom_text.className = "bottom_text";
-//         let watch_btn1 = document.createElement('div');
-//         watch_btn1.className = "watch_btn1";
-//         let a = document.createElement('a');
-//         let i1 = document.createElement('i');
-//         i1.className = "fa-solid fa-play";
-//         a.append(i1);
-//         watch_btn1.append(a)
-//         let a3 = document.createElement('a');
-//         let p = document.createElement('p');
-//         let i2 = document.createElement('i');
-//         i2.className = "fa-solid fa-share-nodes";
-
-//         p.append(i2);
-//         a3.append(p);
-//         bottom_text.append(watch_btn1,p);
-//         text_context.append(h2, bottom_text);
-
-//         let a4 = document.createElement('a');
-
-
-//         cardbox.append(poster, crownicon, text_context,a4);
-//         parentNode.append(cardbox);
-//     }) 
-// }
-
-
-
-
-// PlayYoutube
-// ./playvideo.html
+        })
+        
+        displaygrid(data);
+    }
+    else if(filter =="") {
+        displaygrid(zeeOriginalData);
+    }
+}

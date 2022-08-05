@@ -51,6 +51,18 @@ body {
         border-radius: 4px;
         padding: 10px 20px;
       }
+      .watchbtn{
+        display: flex;
+        justify-content: space-between;
+        gap: 5px;
+        font-size: 12px;
+        font-weight: bolder;
+        border: 1px solid white;
+        background-color: transparent;
+        color: white;
+        border-radius: 4px;
+        padding: 10px 20px;
+      }
       .two-btn {
         display: flex;
       }
