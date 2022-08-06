@@ -175,7 +175,7 @@ function changefilter() {
         
         displaygrid(data);
     }
-    else if(filter =="") {
-        displaygrid(zeeOriginalData);
+    else if(filter =="a") {
+        location.reload()
     }
 }
