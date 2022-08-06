@@ -18,8 +18,8 @@ function DisplayPrfileDiv() {
 }
 function LogOutUserFromProfile() {
   localStorage.clear();
-  document.getElementById("profilePopDiv").style.display = "none";
-  window.open("./index.html", "_self");
+
+  window.open("index.html", "_self");
   checkLoginStatus();
 }
 function redirecttoProfilePage() {
@@ -30,6 +30,7 @@ let flag1 = localStorage.getItem("primeOrNotUser699");
 let flag2 = localStorage.getItem("primeOrNotUser499");
 let buyBtnCondition = document.getElementById("buy");
 if (flag1 == "true") {
+  document.getElementById("profileIMG").style.color = "goldenrod";
   buyBtnCondition.innerHTML = `<i class="fa-solid fa-crown"></i> PREMIUM`;
   buyBtnCondition.style.backgroundColor = "goldenrod";
   buyBtnCondition.disabled = true;

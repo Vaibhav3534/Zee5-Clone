@@ -1,5 +1,4 @@
 // ==============================Display Block and None =================
-
 function noneAndBlock(val, valS) {
   document.getElementById("userProfileSectionUnder").style.display = "none";
   document.getElementById("userProfileUpdate").style.display = "none";
@@ -87,6 +86,13 @@ function ShowDataOnProfile(data) {
   var keyU = JSON.parse(localStorage.getItem("KeyOfLogin"));
   for (var i = 0; i < data.length; i++) {
     if (keyU[0] == data[i].userLoginId) {
+      let arrUser = [];
+      arrUser.push(data[i].userLoginId);
+      arrUser.push(data[i].id);
+      arrUser.push(data[i].name);
+      arrUser.push(data[i].plan699);
+      arrUser.push(data[i].plan499);
+      localStorage.setItem("KeyOfLogin", JSON.stringify(arrUser));
       let initialCharVar = "GU";
       if (data[i].name) {
         initialCharVar = "";
@@ -114,14 +120,20 @@ function ShowDataOnProfile(data) {
         planNotactive.style.display = "none";
         plan499isactive.style.display = "none";
         plan699isactive.style.display = "block";
+        document.getElementById("informationDiv").style.display = "none";
+        document.getElementById("informationDiv2").style.display = "flex";
       } else if (data[i].plan499) {
         planNotactive.style.display = "none";
         plan499isactive.style.display = "block";
         plan699isactive.style.display = "none";
+        document.getElementById("informationDiv").style.display = "flex";
+        document.getElementById("informationDiv2").style.display = "none";
       } else {
         planNotactive.style.display = "flex";
         plan499isactive.style.display = "none";
         plan699isactive.style.display = "none";
+        document.getElementById("informationDiv").style.display = "none";
+        document.getElementById("informationDiv2").style.display = "none";
       }
       document.getElementById("UserProfileInitials").innerText = initialCharVar;
       document.getElementById("userNameDisplay").innerText =
@@ -228,6 +240,7 @@ function UpdateUserProfileInJson() {
     }),
     headers: { "content-type": "application/json" },
   });
+
   alert("Profile Updated Successfully");
 }
 // ===============================user profile update on json =============================
