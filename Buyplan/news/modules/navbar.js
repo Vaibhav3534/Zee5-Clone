@@ -34,6 +34,15 @@ document.getElementById(
                   ><i class="fa-solid fa-ellipsis-vertical"></i
                 ></a>
                 <ul>
+
+                <a
+                     
+               href="Eduaura.html"
+                >Eduauraa</a
+              >
+            </li>
+                
+
                   <li>
                     <a
                      
@@ -47,7 +56,7 @@ document.getElementById(
                     >
                   </li>
                   <li>
-                    <a  title="Rent & Watch Movies on ZEEFEX"
+                    <a href="./zeepage.html"
                       >ZEEFLEX</a
                     >
                   </li>
@@ -74,7 +83,7 @@ document.getElementById(
                       >Stories</a
                     >
                   </li>
-                  <li><a >Channels</a></li>
+                  <li><a href="./channel.html">Channels</a></li>
                 </ul>
               </li>
             </ul>
