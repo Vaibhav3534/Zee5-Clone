@@ -206,3 +206,26 @@ body {
 .nextForCard:hover {
   background-color: rgba(0, 0, 0, 0.8);
 }
+@media screen and (min-width: 381px) and (max-width: 950px) {
+  .containerbox {
+    width: 250%;
+    margin: auto;
+
+    position: relative;
+  }
+  .movie-list-wrapper {
+    width: 250%;
+  }
+}
+@media screen and (min-width: 50px) and (max-width: 380px) {
+  .containerbox {
+    width: 250%;
+    margin: auto;
+
+    position: relative;
+  }
+
+  .movie-list-wrapper {
+    width: 250%;
+  }
+}

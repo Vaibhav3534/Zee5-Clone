@@ -13,19 +13,19 @@ document.getElementById(
                 />
               </li>
               <li>
-                <a href="./index.html">Home</a>
+                <a href="./index.html" id="HomePageA">Home</a>
               </li>
               <li>
-                <a href="./tvshow.html">TV Shows</a>
+                <a href="./tvshow.html" id="TVShowsPageA">TV Shows</a>
+              </li>
+              <li  >
+                <a href="./movies.html" id="MoviesPageA">Movies</a>
               </li>
               <li>
-                <a href="./movies.html">Movies</a>
+                <a href="webseries.html" id="WebSeriesPageA">Web Series</a>
               </li>
               <li>
-                <a href="webseries.html">Web Series</a>
-              </li>
-              <li>
-                <a href="./news.html">News</a>
+                <a href="./news.html" id="NewsPageA">News</a>
               </li>
               <li id="menu">
                 <a href="#"
