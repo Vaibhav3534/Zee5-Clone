@@ -113,7 +113,7 @@ function displaygrid(data) {
     let card = document.querySelector(".cardbox_container");
     card.innerHTML = "";
 
-    data.forEach(function (ele) {
+    let data1 = data.map(function (ele) {
         let card = document.querySelector(".cardbox_container");
         card.innerHTML = card.innerHTML + `<div class="cardbox">
             <img src="${ele.img_url}" alt="Mithya" />
@@ -123,18 +123,17 @@ function displaygrid(data) {
             <div class="text_content">
               <h2>${ele.moviename}</h2>
               <div class="bottom_text">
-                <div class="watch-btn watchbtn">
+                <div class="watch-btn">
                     <a href="">
                     <i class="fa-solid fa-play " ></i> Watch</
-                     </a> 
+                    </a>
                 </div>
                 <p><i class="fa-solid fa-share-nodes"></i> More</p>
               </div>
             </div>
           </div>`
-
-        
     })
+    // card.innerHTML = data1;
 }
 window.addEventListener("load", function () {
 displaygrid(zeeOriginalData);
