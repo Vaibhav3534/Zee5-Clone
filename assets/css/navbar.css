@@ -313,10 +313,7 @@ select option {
   top: 20px;
   transition: all 0.3s;
 }
-#search_input_div img {
-  width: 15px;
-  padding: 15px;
-}
+
 #search_input_div:focus-within {
   width: 380px;
   border: 1px solid #6d1bb1;

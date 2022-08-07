@@ -19,13 +19,113 @@
     />
     <link rel="stylesheet" href="./assets/css/footer.css" />
     <link rel="stylesheet" href="./assets/css/navbar.css" />
-
+    <link rel="stylesheet" href="./assets/css/slider.css" />
     <title>
       ZEE5 - Watch TV Shows, 100+ Originals, Movies, News & Live TV Online
     </title>
   </head>
   <body>
     <section id="NavBarSection"></section>
+    <div id="SliderWindowSection">
+      <div class="containerSlider">
+        <div class="slides">
+          <div class="slide">
+            <img
+              src="https://akamaividz2.zee5.com/image/upload/w_1013,h_405,c_scale,f_webp,q_auto:eco/resources/0-6-1298/cover/1170x658withlogoa0f9e6232dbb4374ae52b88d64d9a4c6.jpg"
+              alt=""
+            />
+            <div class="textandbutton">
+              <h2>Abhay</h2>
+              <div>
+                <button
+                  class="WatchBTN"
+                  onclick="saveToLocalPlay('Abhay web series')"
+                >
+                  <i class="fa-solid fa-play"></i>WATCH
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="slide">
+            <img
+              src="https://akamaividz2.zee5.com/image/upload/w_1013,h_405,c_scale,f_webp,q_auto:eco/resources/0-6-3064/cover/1170x658withlogo5fb1fa139a26407ca753ad1871142923.jpg"
+              alt=""
+            />
+            <div class="textandbutton">
+              <h2>Bicchoo Ka Khel</h2>
+              <div>
+                <button
+                  class="WatchBTN"
+                  onclick="saveToLocalPlay('Bicchoo Ka Khel web seres')"
+                >
+                  <i class="fa-solid fa-play"></i>WATCH
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="slide">
+            <img
+              src="https://akamaividz2.zee5.com/image/upload/w_1013,h_405,c_scale,f_webp,q_auto:eco/resources/0-6-1138/cover/1170x658withlogo899c394a7c974525aea3cb284875f734.jpg"
+              alt=""
+            />
+            <div class="textandbutton">
+              <h2>Rangbaaz</h2>
+              <div>
+                <button
+                  class="WatchBTN"
+                  onclick="saveToLocalPlay('Rangbaaz web series')"
+                >
+                  <i class="fa-solid fa-play"></i>WATCH
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="slide">
+            <img
+              src="https://akamaividz2.zee5.com/image/upload/w_1013,h_405,c_scale,f_webp,q_auto:eco/resources/0-6-4z587408/cover/1170x658withlogoa38382440a5f4a70913625b33df6b6e3d2bbf55903f84834b7f4371d3a348e3d.jpg"
+              alt=""
+            />
+            <div class="textandbutton">
+              <h2>Mithya</h2>
+              <div>
+                <button
+                  class="WatchBTN"
+                  onclick="saveToLocalPlay('Mithya web series')"
+                >
+                  <i class="fa-solid fa-play"></i>WATCH
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="slide">
+            <img
+              src="https://akamaividz2.zee5.com/image/upload/w_1013,h_405,c_scale,f_webp,q_auto:eco/resources/0-6-4z5172356/cover/1170x658withlogo611993703c854906abb2e2b74bba0d09fb1ce49e239a4550baf9cd832451c70d.jpg"
+              alt=""
+            />
+            <div class="textandbutton">
+              <h2>Saas Bahu Achaar</h2>
+              <div>
+                <button
+                  class="WatchBTN"
+                  onclick="saveToLocalPlay('Saas Bahu Achaar')"
+                >
+                  <i class="fa-solid fa-play"></i>WATCH
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a class="prev">❮</a>
+        <a class="next">❯</a>
+      </div>
+      <br />
+
+      <div style="text-align: center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+      </div>
+    </div>
     <section id="footer_top"></section>
   </body>
 </html>
@@ -33,3 +133,4 @@
 <script src="./modules/footer.js"></script>
 <script src="./assets/js/navbarfunction.js"></script>
 <script src="./assets/js/searchFunction.js"></script>
+<script src="./assets/js/slider.js"></script>

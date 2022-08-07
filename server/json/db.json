@@ -10,19 +10,8 @@
       "gender": "Male",
       "dateOfBirth": "2022-08-02",
       "plan699": true,
-      "plan499": true,
-      "watchList": [
-        {
-          "VID": "9cANXUs8Jog",
-          "title": "Doraemon New Episode in Hindi Full Hd 2022",
-          "photo": "https://i.ytimg.com/vi/9cANXUs8Jog/mqdefault.jpg "
-        },
-        {
-          "VID": "BKviRM0KF2A",
-          "title": "AVENGERS: ENDGAME All Movie Clips - Final Battle (2019)",
-          "photo": "https://i.ytimg.com/vi/BKviRM0KF2A/mqdefault.jpg "
-        }
-      ]
+      "plan499": false,
+      "watchList": []
     },
     {
       "phone": "8585858585",
@@ -35,6 +24,36 @@
       "name": "avengers",
       "gender": "Male",
       "dateOfBirth": ""
+    },
+    {
+      "phone": "9090909090",
+      "userLoginId": 1659761043736,
+      "plan699": true,
+      "plan499": true,
+      "watchList": [
+        {
+          "VID": "BKviRM0KF2A",
+          "title": "AVENGERS: ENDGAME All Movie Clips - Final Battle (2019)",
+          "photo": "https://i.ytimg.com/vi/BKviRM0KF2A/mqdefault.jpg "
+        }
+      ],
+      "id": 3,
+      "email": "akash@gmail.com",
+      "name": "Akash Surve",
+      "gender": "Male",
+      "dateOfBirth": "2001-01-06"
+    },
+    {
+      "phone": "6565656565",
+      "userLoginId": 1659858326109,
+      "plan699": true,
+      "plan499": false,
+      "watchList": [],
+      "id": 4,
+      "email": "surveakash01@gmail.com",
+      "name": "Akash Surve",
+      "gender": "Male",
+      "dateOfBirth": "2001-03-06"
     }
   ]
 }

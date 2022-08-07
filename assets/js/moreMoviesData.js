@@ -38,7 +38,6 @@ function ShowMoreResultsInPage(movie) {
   });
 }
 function PlayYoutubeVideo(ele) {
-  console.log(ele);
   localStorage.setItem("PlayYoutube", ele);
   window.open("./playvideo.html", "_self");
 }

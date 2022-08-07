@@ -19,6 +19,7 @@
     />
     <link rel="stylesheet" href="./assets/css/footer.css" />
     <link rel="stylesheet" href="./assets/css/navbar.css" />
+    <link rel="stylesheet" href="./assets/css/slider.css" />
 
     <title>
       ZEE5 - Watch TV Shows, 100+ Originals, Movies, News & Live TV Online
@@ -26,6 +27,97 @@
   </head>
   <body>
     <section id="NavBarSection"></section>
+    <div id="SliderWindowSection">
+      <div class="containerSlider">
+        <div class="slides">
+          <div class="slide">
+            <img
+              src="https://akamaividz2.zee5.com/image/upload/w_1013,h_405,c_scale,f_webp,q_auto:eco/resources/0-6-4z5173774/cover/1170x658withlogo57dfc1de69214590b284a06a59f605f840843f83f8dc4edcb1927553c61e9d7a.jpg"
+              alt=""
+            />
+            <div class="textandbutton">
+              <h2>Rangbaaz: Darr Ki Rajneeti</h2>
+              <div>
+                <button
+                  class="WatchBTN"
+                  onclick="saveToLocalPlay('Rangbaaz: Darr Ki Rajneeti')"
+                >
+                  <i class="fa-solid fa-play"></i>WATCH
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="slide">
+            <img
+              src="https://akamaividz2.zee5.com/image/upload/w_1013,h_405,c_scale,f_webp,q_auto:eco/resources/0-0-1z5149852/cover/1170x658withlogo8fd99cbf8ca44fceba4bc7d127aa4d3e.jpg"
+              alt=""
+            />
+            <div class="textandbutton">
+              <h2>Forensic</h2>
+              <div>
+                <button class="WatchBTN" onclick="saveToLocalPlay('Forensic')">
+                  <i class="fa-solid fa-play"></i>WATCH
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="slide">
+            <img
+              src="https://akamaividz2.zee5.com/image/upload/w_1013,h_405,c_scale,f_webp,q_auto:eco/resources/0-101-10z5145273/cover/1170x6582df54c70231d46be821e840ee96314a4.jpg"
+              alt=""
+            />
+            <div class="textandbutton">
+              <h2>RRR</h2>
+              <div>
+                <button class="WatchBTN" onclick="saveToLocalPlay('RRR')">
+                  <i class="fa-solid fa-play"></i>WATCH
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="slide">
+            <img
+              src="https://akamaividz2.zee5.com/image/upload/w_1013,h_405,c_scale,f_webp,q_auto:eco/resources/0-0-1z5168144/cover/1170x658withlogo5ef40e7fd6c54a3ea2c577107ee2a597.jpg"
+              alt=""
+            />
+            <div class="textandbutton">
+              <h2>Dhaakad</h2>
+              <div>
+                <button class="WatchBTN" onclick="saveToLocalPlay('Dhaakad')">
+                  <i class="fa-solid fa-play"></i>WATCH
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="slide">
+            <img
+              src="https://akamaividz2.zee5.com/image/upload/w_1013,h_405,c_scale,f_webp,q_auto:eco/resources/0-6-4z5155964/cover/1170x658withlogo9dc58714acd248efb0dd738b3f34dfc0.jpg"
+              alt=""
+            />
+            <div class="textandbutton">
+              <h2>DID Super Moms 2022</h2>
+              <div>
+                <button
+                  class="WatchBTN"
+                  onclick="saveToLocalPlay('DID Super Moms 2022')"
+                >
+                  <i class="fa-solid fa-play"></i>WATCH
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a class="prev">❮</a>
+        <a class="next">❯</a>
+      </div>
+      <br />
+
+      <div style="text-align: center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+      </div>
+    </div>
     <section id="footer_top"></section>
   </body>
 </html>
@@ -33,3 +125,4 @@
 <script src="./modules/footer.js"></script>
 <script src="./assets/js/navbarfunction.js"></script>
 <script src="./assets/js/searchFunction.js"></script>
+<script src="./assets/js/slider.js"></script>
