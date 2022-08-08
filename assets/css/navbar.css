@@ -21,7 +21,7 @@ section {
   max-width: 100%;
   width: 100%;
   margin: auto;
-  padding: 0 50px 0 0;
+  padding: 0 30px 0 0;
   background-color: #0f0617;
   display: flex;
   justify-content: space-between;
@@ -126,6 +126,7 @@ ul li span {
   /* margin-top: -5px; */
 }
 #log {
+  margin: 0 -20px;
   background-color: transparent;
   color: #fff;
   border: 1px solid #fff;
@@ -313,7 +314,7 @@ select option {
   border: 1px solid rgb(122, 114, 114);
   border-radius: 5px;
   position: absolute;
-  right: 328px;
+  right: 365px;
   top: 20px;
   transition: all 0.3s;
 }

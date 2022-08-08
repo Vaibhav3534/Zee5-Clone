@@ -160,10 +160,10 @@ a {
 }
 #box2 {
   cursor: pointer;
-  /* height: 100px; */
+
   width: 90%;
   margin-right: 35px;
-  margin-top: 20px;
+  margin-top: 0px;
 
   border: 1px dashed gray;
   border-radius: 5px 5px 0 0;

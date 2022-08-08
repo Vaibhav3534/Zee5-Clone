@@ -46,6 +46,7 @@ function continueIfOTPIs() {
         }),
         headers: { "content-type": "application/json" },
       });
+      window.open("./paymentsuccessful.html", "_self");
     } else {
       let keyU = JSON.parse(localStorage.getItem("KeyOfLogin"));
       fetch(`http://localhost:3000/UserLoginDetails/${keyU[1]}`, {
@@ -55,8 +56,8 @@ function continueIfOTPIs() {
         }),
         headers: { "content-type": "application/json" },
       });
+      window.open("./paymentsuccessful.html", "_self");
     }
-    window.open("./paymentsuccessful.html", "_self");
   } else {
     // alert("Wrong OTP");
     swal("Wrong OTP", "Please Enter Valid OTP", "info");
