@@ -56,12 +56,16 @@ function checkPhonenumber(data) {
     loginBTNElement.innerText = "Verify";
     let otpalert = Math.floor(Math.random() * 1000 + 1000);
     localStorage.setItem("OTPNew", otpalert);
-    alert(`OTP = ${otpalert}`);
+    swal(`${otpalert}`, "Your OTP", "info");
     document.getElementById("otpDivInput").style.display = "flex";
     loginBTNElement.removeEventListener("click", checkDataWithServerNumber);
     loginBTNElement.addEventListener("click", loginUserIfOTP);
   } else {
-    alert("Phone number is already verified");
+    swal(
+      "Phone number is already verified",
+      "Please Enter anotherNumber ",
+      "error"
+    );
   }
 }
 function loginUserIfOTP() {
@@ -69,21 +73,23 @@ function loginUserIfOTP() {
   let OTP = document.getElementById("OTPofNumber").value;
   let OTPLocal = localStorage.getItem("OTPNew");
   if (OTP == OTPLocal) {
-    fetch("http://localhost:3000/UserLoginDetails", {
-      method: "POST",
-      body: JSON.stringify({
-        phone: mobileNumber,
-        userLoginId: Date.now(),
-        plan699: false,
-        plan499: false,
-        watchList: [],
-      }),
-      headers: { "Content-Type": "application/json" },
-    });
-    alert("signup Successfully");
-    window.open("./login.html", "_self");
+    swal("SignUp Successfully", "Welcome, Please Login Again", "success");
+    setTimeout(function () {
+      fetch("http://localhost:3000/UserLoginDetails", {
+        method: "POST",
+        body: JSON.stringify({
+          phone: mobileNumber,
+          userLoginId: Date.now(),
+          plan699: false,
+          plan499: false,
+          watchList: [],
+        }),
+        headers: { "Content-Type": "application/json" },
+      });
+      window.open("./login.html", "_self");
+    }, 3000);
   } else {
-    alert("Wrong OTP");
+    swal("Wrong OTP", "Please Enter valid OTP ", "error");
   }
 }
 // ===============================Login with number end================================

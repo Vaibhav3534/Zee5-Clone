@@ -54,7 +54,7 @@ function slideCardBoard1(direction) {
 getdata();
 async function getdata() {
   try {
-    let url = "http://www.omdbapi.com/?apikey=d6f2de94&s=marvel";
+    let url = "https://www.omdbapi.com/?apikey=d6f2de94&s=marvel";
     let res = await fetch(url);
     let data = await res.json();
 
@@ -108,10 +108,11 @@ function slideCardBoard2(direction) {
 getdataTVShows();
 async function getdataTVShows() {
   try {
-    let url = "http://localhost:3000/TvShowsZee5";
+    let url =
+      "https://api.hotstar.com/s/sniper/forerunner?q=Tv%20shows&size=100";
     let res = await fetch(url);
     let data = await res.json();
-    getdataTVShowsAppend(data);
+    getdataTVShowsAppend(data.body.results.items);
   } catch (error) {
     console.log(error);
   }
@@ -123,19 +124,28 @@ function getdataTVShowsAppend(data) {
     card.innerHTML =
       card.innerHTML +
       `<div class="cardbox">
-            <img src="${ele.img_url}" alt="Mithya" />
+            <img
+          src="https://img1.hotstarext.com/image/upload/f_auto,t_web_vl_3x/${
+            ele.images.v || ele.images.h
+          }"
+          alt=""
+        />
             <div class="crownicon">
               <a href="#"><i class="fa-solid fa-crown"></i></a>
             </div>
             <div class="text_content">
-              <h2>${ele.text}</h2>
+              <h2>${ele.title}</h2>
               <div class="bottom_text">
                 <div class="watch-btn">
                     <a >
-                    <i onclick="SaveAndPlayVideoYoutube('${ele.text}')" class="fa-solid fa-play " ></i> Watch</
+                    <i onclick="SaveAndPlayVideoYoutube('${
+                      ele.title
+                    }')" class="fa-solid fa-play " ></i> Watch</
                     </a>
                 </div>
-                <p ><i onclick="showMoreResultsMovie('${ele.text}')"class="fa-solid fa-share-nodes"></i> More</p>
+                <p ><i onclick="showMoreResultsMovie('${
+                  ele.title
+                }')"class="fa-solid fa-share-nodes"></i> More</p>
               </div>
             </div>
           </div>`;

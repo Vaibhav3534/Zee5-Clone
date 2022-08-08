@@ -14,6 +14,8 @@
       href="https://www.zee5.com/images/ZEE5_logo.svg?ver=2.51.82"
       class="jsx-397bb7cff0cecce7"
     />
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <!-- -------------------font Awesome Link------------- -->
     <link
       rel="stylesheet"
@@ -58,30 +60,36 @@
           <div id="form">
             <label for=""> Enter Card Number</label>
             <input
-              type="number"
+              type="text"
               id="cardnumber"
               placeholder="Enter Card Number"
-              required
+              required="required"
+              minlength="16"
+              maxlength="16"
             />
             <label for=""> Expiry Date</label>
             <input
-              type="month"
+              type="date"
               placeholder="Enter Expiry Date"
               id="ExpiryDate"
-              required
+              required="required"
             />
             <label for=""> CVV</label>
             <input
-              type="password"
+              type="text"
               id="Cvv"
               placeholder="Enter CVV"
-              required
+              minlength="3"
+              maxlength="3"
+              required="required"
             /><br />
             <input
-              type="password"
+              type="text"
               id="OtpOfPayment"
+              maxlength="4"
+              minlength="4"
               placeholder="Enter OTP"
-              required
+              required="required"
             /><br />
             <button id="btn">Proceed To Pay</button>
           </div>

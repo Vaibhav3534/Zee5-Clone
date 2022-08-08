@@ -23,9 +23,11 @@ function showOTPSection(event) {
   var Cvv = document.getElementById("Cvv").value;
 
   if (cardNumber == "" && ExpiryDate == "" && Cvv == "") {
-    alert("Please fill all the fields");
+    // alert("Please fill all the fields");
+    swal("Please fill all the fields", "Error", "error");
   } else {
-    alert("OTP = 3568");
+    // alert("OTP = 3568");
+    swal("OTP = 3568", "Your OTP", "info");
     document.getElementById("OtpOfPayment").style.display = "block";
     btn.removeEventListener("click", showOTPSection);
     btn.addEventListener("click", continueIfOTPIs);
@@ -56,6 +58,7 @@ function continueIfOTPIs() {
     }
     window.open("./paymentsuccessful.html", "_self");
   } else {
-    alert("Wrong OTP");
+    // alert("Wrong OTP");
+    swal("Wrong OTP", "Please Enter Valid OTP", "info");
   }
 }

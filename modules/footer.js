@@ -38,11 +38,11 @@ document.getElementById("footer_top").innerHTML = `
           </div>
 
           <div class="aboutus">
-            <a href="../pages/about.html">About us</a>
+            <a href="../about.html">About us</a>
 
             <a>|</a>
 
-            <a>Help Center</a>
+            <a href="../helpcenter.html">Help Center</a>
 
             <a>|</a>
 

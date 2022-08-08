@@ -17,6 +17,8 @@
       href="https://www.zee5.com/images/ZEE5_logo.svg?ver=2.51.82"
       class="jsx-397bb7cff0cecce7"
     />
+    <link rel="stylesheet" href="./assets/css/translate.css" />
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <link rel="stylesheet" href="./assets/css/footer.css" />
     <link rel="stylesheet" href="./assets/css/navbar.css" />
     <link rel="stylesheet" href="./assets/css/moreMoviesData.css" />
@@ -27,8 +29,30 @@
   </head>
   <body>
     <section id="NavBarSection"></section>
+
     <section id="More-Page-Content">
       <h1>Showing all results <span id="NameSearchedFor"></span></h1>
+      <div id="sortingAndFilterMethods">
+        <div>
+          <label>Sort</label>
+          <select id="SortByABC">
+            <option value="Default">Default</option>
+            <option value="ATOZ">Sort A - Z</option>
+            <option value="ZTOA">Sort Z - A</option>
+          </select>
+        </div>
+        <div>
+          <label>Filter</label>
+          <select name="" id="FilterByType">
+            <option value="All">All</option>
+            <option value="MOVIE">Movies</option>
+            <option value="SHOW">Show</option>
+            <option value="CLIPS">Clips</option>
+            <option value="SPORT">Sports</option>
+            <option value="NEWS">News</option>
+          </select>
+        </div>
+      </div>
       <div id="More-Page-Content-IMG"></div>
     </section>
     <section id="footer_top"></section>
@@ -39,3 +63,6 @@
 <script src="./assets/js/navbarfunction.js"></script>
 <script src="./assets/js/searchFunction.js"></script>
 <script src="./assets/js/moreMoviesData.js"></script>
+<script src="./assets/js/underline.js"></script>
+<script src="./assets/js/translate.js"></script>
+<script src="https://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate"></script>

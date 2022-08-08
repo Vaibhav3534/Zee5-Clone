@@ -19,16 +19,17 @@ async function checkWatchList(val) {
 showData();
 async function showData() {
   try {
-    let API_Key = "AIzaSyDq721ZEm-k4Gw4lsM7PdHupdVSho59-EY";
+    // let API_Key = "AIzaSyDq721ZEm-k4Gw4lsM7PdHupdVSho59-EY";
     // let API_Key = "AIzaSyAO_FJ2SlqU8Q4STEHLGCilw_Y9_11qcW8";
     // let API_Key = "AIzaSyCftPbeNpkIfO1ZenM1gZyig6FwPPaFWUs";
-    // let API_Key = "AIzaSyAvptm2s94qvpMCj-x6q_fAaU19Xm0ODdM";
-    // let API_Key = "AIzaSyD7v1w_pbXSgvMZ-QX1MLu_o7fLE8t1Kbg";
+    let API_Key = "AIzaSyAvptm2s94qvpMCj-x6q_fAaU19Xm0ODdM";
+
     // let API_Key = "AIzaSyB6oTf8ixgbj03k06_g1She1vdGnzwPOQE";
     // let API_Key = "AIzaSyCd8s2X3b-Nr_eT2AY22umiKC0OiLAxwPg";
     // let API_Key = "AIzaSyB6cLOaAJ3Tvmuy4kHsKyRx1vYol7Ku6z0";
     // let API_Key = "AIzaSyDkUyWKXVguKF1y6wYQy3fQz2T2JX8q_ZY";
-
+    // let API_Key = "AIzaSyD7v1w_pbXSgvMZ-QX1MLu_o7fLE8t1Kbg";
+    // let API_Key = "AIzaSyA5q3pQA9OmPNeZUgXfjTgirhyqdzV4I5M";
     let val = localStorage.getItem("PlayYoutube");
     console.log(val);
     let url = `https://youtube.googleapis.com/youtube/v3/search?type=video&part=snippet&maxResults=1&q=${val}&key=${API_Key}`;
@@ -115,14 +116,17 @@ function removeFromWatchList(videoID) {
           arrOfWatchList.splice(index, 1);
         }
       });
-      alert("Removed From Watch List");
-      fetch(`http://localhost:3000/UserLoginDetails/${id}`, {
-        method: "PATCH",
-        body: JSON.stringify({
-          watchList: arrOfWatchList,
-        }),
-        headers: { "content-type": "application/json" },
-      });
+      // alert("Removed From Watch List");
+      swal("Removed From Watch List", "DONE", "success");
+      setTimeout(function () {
+        fetch(`http://localhost:3000/UserLoginDetails/${id}`, {
+          method: "PATCH",
+          body: JSON.stringify({
+            watchList: arrOfWatchList,
+          }),
+          headers: { "content-type": "application/json" },
+        });
+      }, 3000);
     } catch (error) {
       console.log(error);
     }
@@ -145,15 +149,18 @@ function addToWatchList(videoID, videotitle, videourl) {
       let data = await res.json();
       arrOfWatchList = data.watchList;
       objWatchList = { VID: videoID, title: videotitle, photo: videourl };
-      alert("Added video to Watch List");
+      // alert("Added video to Watch List");
+      swal("Added video to Watch List", "Done", "success");
       arrOfWatchList.push(objWatchList);
-      fetch(`http://localhost:3000/UserLoginDetails/${id}`, {
-        method: "PATCH",
-        body: JSON.stringify({
-          watchList: arrOfWatchList,
-        }),
-        headers: { "content-type": "application/json" },
-      });
+      setTimeout(function () {
+        fetch(`http://localhost:3000/UserLoginDetails/${id}`, {
+          method: "PATCH",
+          body: JSON.stringify({
+            watchList: arrOfWatchList,
+          }),
+          headers: { "content-type": "application/json" },
+        });
+      }, 3000);
     } catch (error) {
       console.log(error);
     }
@@ -229,9 +236,16 @@ setInterval(function () {
       "buyPlanTagforchange"
     ).innerHTML = `<i class="fa-solid fa-crown"></i> BUY PLAN`;
     buyBtnDiv.style.display = "flex";
-    alert("Your Free time is over. Please purchase any plan to continue");
+    // alert("Your Free time is over. Please purchase any plan to continue");
+    swal(
+      "You don't have any premium",
+      "Please purchase any plan to continue",
+      "error"
+    );
     document.getElementById("buyPlanDiv").style.display = "flag";
-    window.open("./buyplan.html", "_self");
+    setTimeout(function () {
+      window.open("./buyplan.html", "_self");
+    }, 5000);
   }
 
   //===================================below video buy plan div conditions end============================

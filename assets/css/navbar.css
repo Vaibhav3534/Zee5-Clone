@@ -106,6 +106,10 @@ ul li span {
   left: 0;
   bottom: -10px;
 }
+.active {
+  text-decoration: solid underline red 3px;
+  text-underline-offset: 0.7em;
+}
 #box1 > ul > li:not(:last-child) a:hover:after {
   color: #ffffff;
   width: 100%;
@@ -326,18 +330,19 @@ select option {
   border: none;
   outline: none;
   color: white;
-  width: 297px;
-  height: 25px;
+  width: 293px;
+  height: 29px;
   transition: all 0.3s;
   position: absolute;
-  top: 4px;
-  right: 4px;
+  top: 1px;
+  right: 3px;
 }
 #profileIMG {
   color: white;
-  font-size: 25px;
+  font-size: 30px;
   position: relative;
   cursor: pointer;
+  margin-left: -10px;
 }
 #profilePopDiv {
   position: absolute;

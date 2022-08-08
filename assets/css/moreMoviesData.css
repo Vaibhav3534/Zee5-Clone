@@ -104,6 +104,23 @@
   #More-Page-Content {
     width: 80%;
   }
+  #sortingAndFilterMethods label {
+    font-size: 15px;
+  }
+  #sortingAndFilterMethods select {
+    width: 50px;
+    height: 30px;
+    border-radius: 5px;
+    font-size: 10px;
+    text-align: center;
+    background-color: #0f0617;
+    margin-top: -10px;
+  }
+  #sortingAndFilterMethods > div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
 }
 @media all and (min-width: 50px) and (max-width: 380px) {
   #More-Page-Content-IMG {
@@ -122,4 +139,48 @@
     width: 80%;
     padding: 0;
   }
+
+  #sortingAndFilterMethods label {
+    font-size: 15px;
+  }
+  #sortingAndFilterMethods select {
+    width: 50px;
+    height: 30px;
+    border-radius: 5px;
+    font-size: 10px;
+    text-align: center;
+    background-color: #0f0617;
+    margin-top: -10px;
+  }
+  #sortingAndFilterMethods > div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+}
+#sortingAndFilterMethods {
+  display: flex;
+  margin-bottom: 29px;
+  margin-top: -15px;
+}
+#sortingAndFilterMethods label {
+  font-size: 20px;
+}
+#sortingAndFilterMethods select {
+  width: 300px;
+  height: 30px;
+  border-radius: 5px;
+  font-size: 18px;
+  text-align: center;
+  background-color: #0f0617;
+  margin-top: -10px;
+  cursor: pointer;
+}
+#sortingAndFilterMethods select option {
+  cursor: pointer;
+}
+#sortingAndFilterMethods > div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }

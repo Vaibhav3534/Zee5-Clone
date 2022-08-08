@@ -193,14 +193,18 @@ function confirmNewPasswordfunc() {
 }
 function updatePasswordInJson() {
   let keyU = JSON.parse(localStorage.getItem("KeyOfLogin"));
-  fetch(`http://localhost:3000/UserLoginDetails/${keyU[1]}`, {
-    method: "PATCH",
-    body: JSON.stringify({
-      password: newPasswordcheck.value,
-    }),
-    headers: { "content-type": "application/json" },
-  });
-  alert("Password Updated Successfully");
+
+  // alert("Password Updated Successfully");
+  swal("Password Updated Successfully", "DONE", "success");
+  setTimeout(function () {
+    fetch(`http://localhost:3000/UserLoginDetails/${keyU[1]}`, {
+      method: "PATCH",
+      body: JSON.stringify({
+        password: newPasswordcheck.value,
+      }),
+      headers: { "content-type": "application/json" },
+    });
+  }, 3000);
 }
 // =============================change password end ====================
 // ===============================password Visibility =============================
@@ -230,18 +234,21 @@ function myFunction2() {
 // ===============================user profile update on json =============================
 function UpdateUserProfileInJson() {
   let keyU = JSON.parse(localStorage.getItem("KeyOfLogin"));
-  fetch(`http://localhost:3000/UserLoginDetails/${keyU[1]}`, {
-    method: "PATCH",
-    body: JSON.stringify({
-      email: document.getElementById("emailUserUpdate").value,
-      name: document.getElementById("NameUserUpdate").value,
-      gender: document.getElementById("selectGender").value,
-      dateOfBirth: document.getElementById("DOBUserUpdate").value,
-    }),
-    headers: { "content-type": "application/json" },
-  });
 
-  alert("Profile Updated Successfully");
+  // alert("Profile Updated Successfully");
+  swal("Profile Updated Successfully", "DONE", "success");
+  setTimeout(function () {
+    fetch(`http://localhost:3000/UserLoginDetails/${keyU[1]}`, {
+      method: "PATCH",
+      body: JSON.stringify({
+        email: document.getElementById("emailUserUpdate").value,
+        name: document.getElementById("NameUserUpdate").value,
+        gender: document.getElementById("selectGender").value,
+        dateOfBirth: document.getElementById("DOBUserUpdate").value,
+      }),
+      headers: { "content-type": "application/json" },
+    });
+  }, 3000);
 }
 // ===============================user profile update on json =============================
 
@@ -302,14 +309,18 @@ function removeWatchList(ele) {
           arrOfWatchList.splice(index, 1);
         }
       });
-      alert("Removed From Watch List");
-      fetch(`http://localhost:3000/UserLoginDetails/${id}`, {
-        method: "PATCH",
-        body: JSON.stringify({
-          watchList: arrOfWatchList,
-        }),
-        headers: { "content-type": "application/json" },
-      });
+
+      // alert("Removed From Watch List");
+      swal("Removed From Watch List", "DONE", "success");
+      setTimeout(function () {
+        fetch(`http://localhost:3000/UserLoginDetails/${id}`, {
+          method: "PATCH",
+          body: JSON.stringify({
+            watchList: arrOfWatchList,
+          }),
+          headers: { "content-type": "application/json" },
+        });
+      }, 3000);
     } catch (error) {
       console.log(error);
     }

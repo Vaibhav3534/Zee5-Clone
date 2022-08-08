@@ -85,7 +85,7 @@ function checkPhonenumber(data) {
   if (flag.length != 0) {
     let otpalert = Math.floor(Math.random() * 1000 + 1000);
     localStorage.setItem("OTPNew", otpalert);
-    alert(`OTP = ${otpalert}`);
+    swal(`${otpalert}`, "Your OTP", "info");
     loginBTNElement.innerText = "Verify OTP";
     document.getElementById("otpDivInput").style.display = "flex";
     document.getElementById("forgotPasID").style.display = "none";
@@ -93,7 +93,7 @@ function checkPhonenumber(data) {
     loginBTNElement.removeEventListener("click", checkDataWithServerEmail);
     loginBTNElement.addEventListener("click", loginUserIfOTP);
   } else {
-    alert("Number Not Registered");
+    swal("Number Not Registered", "Please Register Your Number ", "error");
   }
 }
 async function loginUserIfOTP() {
@@ -126,11 +126,13 @@ async function loginUserIfOTP() {
           }
         }
       }
-      alert("Login Successfully");
+      swal("Welcome To Zee5!", "Login Successfully", "success");
 
-      window.open("../../index.html", "_self");
+      setTimeout(function () {
+        window.open("../../index.html", "_self");
+      }, 3000);
     } else {
-      alert("Wrong OTP");
+      swal("Wrong OTP", "Please Enter valid OTP", "error");
     }
   } catch (error) {
     console.log(error);
@@ -178,10 +180,12 @@ function checkemailData(data) {
         }
       }
     }
-    alert("Login Successfully");
-    window.open("../../index.html", "_self");
+    swal("Login Successfully", "Welcome", "success");
+    setTimeout(function () {
+      window.open("../../index.html", "_self");
+    }, 3000);
   } else {
-    alert("wrong credentials");
+    swal("wrong credentials", "Please valid Info", "success");
   }
 }
 // ===============================Login with email end================================

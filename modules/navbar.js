@@ -12,19 +12,20 @@ document.getElementById(
                   alt="Zee% lOgo"
                 />
               </li>
-              <li>
+              
+              <li id="home_elem">
                 <a href="./index.html" id="HomePageA">Home</a>
               </li>
-              <li>
+                  <li id="tvshow_elem">
                 <a href="./tvshow.html" id="TVShowsPageA">TV Shows</a>
               </li>
-              <li  >
+            <li id="movie_elem">
                 <a href="./movies.html" id="MoviesPageA">Movies</a>
               </li>
-              <li>
+            <li id="webseries_elem" >
                 <a href="webseries.html" id="WebSeriesPageA">Web Series</a>
               </li>
-              <li>
+             <li id="news_elem">
                 <a href="./news.html" id="NewsPageA">News</a>
               </li>
               <li id="menu">
@@ -47,8 +48,13 @@ document.getElementById(
                     >
                   </li>
                   <li>
-                    <a  title="Rent & Watch Movies on ZEEFEX"
+                    <a  href="./zeeFlex.html"
                       >ZEEFLEX</a
+                    >
+                  </li>
+                  <li>
+                    <a  href="./Eduaura.html"
+                      >Eduaura</a
                     >
                   </li>
                   <li>
@@ -74,7 +80,7 @@ document.getElementById(
                       >Stories</a
                     >
                   </li>
-                  <li><a >Channels</a></li>
+                  <li><a href="channel.html">Channels</a></li>
                 </ul>
               </li>
             </ul>
@@ -94,6 +100,9 @@ document.getElementById(
                     <div id="movie-container"></div>
                   </section>
                 </div>
+              </li>
+                <li>
+              <div id="translate"></div>
               </li>
               <li>
                 <a
