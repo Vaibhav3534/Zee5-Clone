@@ -115,7 +115,8 @@ function removeFromWatchList(videoID) {
           arrOfWatchList.splice(index, 1);
         }
       });
-      alert("Removed From Watch List");
+      swal("Removed From Watch List", "DONE", "success");
+
       fetch(`http://localhost:3000/UserLoginDetails/${id}`, {
         method: "PATCH",
         body: JSON.stringify({
@@ -145,7 +146,9 @@ function addToWatchList(videoID, videotitle, videourl) {
       let data = await res.json();
       arrOfWatchList = data.watchList;
       objWatchList = { VID: videoID, title: videotitle, photo: videourl };
-      alert("Added video to Watch List");
+      
+      swal("Added video to Watch List", "Done", "success");
+
       arrOfWatchList.push(objWatchList);
       fetch(`http://localhost:3000/UserLoginDetails/${id}`, {
         method: "PATCH",
@@ -170,6 +173,7 @@ async function moreMovieAppendSearch(MovieUrl) {
     let url = MovieUrl;
     let response = await fetch(url);
     let data = await response.json();
+
     ShowMoreResultsInPage(data.body.results.items);
     console.log(data);
   } catch (error) {
@@ -229,10 +233,16 @@ setInterval(function () {
       "buyPlanTagforchange"
     ).innerHTML = `<i class="fa-solid fa-crown"></i> BUY PLAN`;
     buyBtnDiv.style.display = "flex";
-    alert("Your Free time is over. Please purchase any plan to continue");
+    // alert("Your Free time is over. Please purchase any plan to continue");
+    swal("Your Free time is over. ", "Please purchase any plan to continue", "error");
+
+    
     document.getElementById("buyPlanDiv").style.display = "flag";
-    window.open("./buyplan.html", "_self");
+    setTimeout(function () { 
+      window.open("./buyplan.html", "_self");
+
+    },2000)
   }
 
   //===================================below video buy plan div conditions end============================
-}, 2000);
+}, 4000);

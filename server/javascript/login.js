@@ -85,7 +85,7 @@ function checkPhonenumber(data) {
   if (flag.length != 0) {
     let otpalert = Math.floor(Math.random() * 1000 + 1000);
     localStorage.setItem("OTPNew", otpalert);
-    alert(`OTP = ${otpalert}`);
+    swal(`${otpalert}`, "Your OTP", "info");
     loginBTNElement.innerText = "Verify OTP";
     document.getElementById("otpDivInput").style.display = "flex";
     document.getElementById("forgotPasID").style.display = "none";
@@ -93,7 +93,7 @@ function checkPhonenumber(data) {
     loginBTNElement.removeEventListener("click", checkDataWithServerEmail);
     loginBTNElement.addEventListener("click", loginUserIfOTP);
   } else {
-    alert("Number Not Registered");
+    swal("Number Not Registered","Please Register Number ", "error");
   }
 }
 async function loginUserIfOTP() {
@@ -126,11 +126,15 @@ async function loginUserIfOTP() {
           }
         }
       }
-      alert("Login Successfully");
+      swal("Good job!", "Login Successfully", "success");
+      
+        window.open("../../index.html", "_self");
 
-      window.open("../../index.html", "_self");
+    
+
     } else {
-      alert("Wrong OTP");
+      swal("Wrong OTP", "Please Enter Right OTP", "error");
+      
     }
   } catch (error) {
     console.log(error);
@@ -178,10 +182,11 @@ function checkemailData(data) {
         }
       }
     }
-    alert("Login Successfully");
+    swal("Login Successfully", "Welcome", "success");
+    
     window.open("../../index.html", "_self");
   } else {
-    alert("wrong credentials");
+    swal("wrong credentials", "Please Right Info", "success");
   }
 }
 // ===============================Login with email end================================

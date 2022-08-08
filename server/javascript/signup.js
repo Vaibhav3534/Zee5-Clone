@@ -56,12 +56,14 @@ function checkPhonenumber(data) {
     loginBTNElement.innerText = "Verify";
     let otpalert = Math.floor(Math.random() * 1000 + 1000);
     localStorage.setItem("OTPNew", otpalert);
-    alert(`OTP = ${otpalert}`);
+    swal(`${otpalert}`, "Your OTP", "info");
+    
     document.getElementById("otpDivInput").style.display = "flex";
     loginBTNElement.removeEventListener("click", checkDataWithServerNumber);
     loginBTNElement.addEventListener("click", loginUserIfOTP);
   } else {
-    alert("Phone number is already verified");
+    swal("Phone number is already verified", "Please Enter anotherNumber ", "error");
+    
   }
 }
 function loginUserIfOTP() {
@@ -80,10 +82,10 @@ function loginUserIfOTP() {
       }),
       headers: { "Content-Type": "application/json" },
     });
-    alert("signup Successfully");
+    swal("Good job!", "signup Successfully", "success");
     window.open("./login.html", "_self");
   } else {
-    alert("Wrong OTP");
+    swal("Wrong OTP", "Please Enter Valid OTP", "error");
   }
 }
 // ===============================Login with number end================================
