@@ -20,7 +20,7 @@ npm start
 ```
 
 Deployment Link
-https://animated-cannoli-4ee19c.netlify.app
+https://zee5clone22.netlify.app/index.html
 
 ## Contributors
 - [Akash Surve](https://github.com/Akash2377)
